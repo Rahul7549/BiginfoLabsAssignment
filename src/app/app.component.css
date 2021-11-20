@@ -1,0 +1,31 @@
+.Opction
+{
+  height: 70px;
+  width: 150px;
+  background-color:white;
+}
+
+
+.jumbotron
+{
+    padding-right: 160px;
+    padding-left: 160px;
+    border-radius: 6px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+    background-color: #e9ecef;
+}
+
+.RightAns
+{
+  background-color: green;
+  color:white;
+
+}
+
+.WrongAns
+{
+  background-color: red;
+  color: white;
+}
+

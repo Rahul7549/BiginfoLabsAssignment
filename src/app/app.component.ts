@@ -7,4 +7,22 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Assignment';
+
+  public Answer: String="";
+  public AnsStatus:String="";
+
+  East()
+  {
+    console.log("East");
+    this.Answer='East';
+    this.AnsStatus="East ,That's right "
+  }
+
+  West()
+  {
+
+    console.log("West");
+    this.Answer='West';
+    this.AnsStatus="West ,That's Wrong"
+  }
 }
