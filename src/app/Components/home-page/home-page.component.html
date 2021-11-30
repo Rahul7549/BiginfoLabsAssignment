@@ -1,0 +1,85 @@
+<nav class="navbar navbar-dark bg-primary">
+  <Button class="navbar-brand btn btn-success" (click)="createAlbum()">Add Album</Button>
+  <div class="form-inline">
+    <input class="form-control" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="Searchid">
+  </div>
+  <Button class="navbar-brand btn btn-success" (click)="searchByUserId()">Search</Button>
+</nav>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">userId</th>
+      <th scope="col">title</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let album of albums">
+      <th scope="row">{{album.id}}</th>
+      <td>{{album.userId}}</td>
+      <td>{{album.title}}</td>
+      <td><i class="text-danger px-3 rgba-red-strong" (click)="deteteEmp(album.id)">Edit</i> <i class="text-warning" (click)="updateEmp(album.id)">Update</i></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+<div bsModal #content="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Add Album</h4>
+        <button type="button" class="close" (click)="content.hide()" aria-label="Close">
+          <span aria-hidden="true">x</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="name">Id</label>
+          <input type="text" [(ngModel)]="id" class="form-control" id="device" placeholder="Enter Device Name">
+        </div>
+        <div class="form-group">
+          <label for="subject">userId</label>
+          <input type="text" [(ngModel)]="userId" class="form-control" id="subject" placeholder="Enter Subject Id">
+        </div>
+        <div class="form-group">
+          <label for="location">title</label>
+          <input type="text" [(ngModel)]="title" class="form-control" id="location" placeholder="Enter Location">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="content.hide()">Close</button>
+        <button (click)="createAlbum();content.hide()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div bsModal #content1="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Album</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="name">Id: {{id}}</label>
+        </div>
+        <div class="form-group">
+          <label for="subject">userId: {{userId}}</label>
+        </div>
+        <div class="form-group">
+          <label for="location">title: {{title}}</label>
+         </div>
+      </div>
+    </div>
+  </div>
+</div>
